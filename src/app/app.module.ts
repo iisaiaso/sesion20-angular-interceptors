@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorsService } from './services/interceptors.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,13 @@ import { PagesModule } from './pages/pages.module';
     PagesModule,
     ComponentsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:InterceptorsService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
