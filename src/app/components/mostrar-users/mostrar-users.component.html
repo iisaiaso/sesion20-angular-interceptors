@@ -1,0 +1,7 @@
+<h1>{{title | uppercase}}</h1>
+<button 
+(click)="getShowUsers()">Mostrar</button>
+<hr>
+<ul *ngFor="let x of showUsers">
+    <li>{{x.name}}</li>
+</ul>
