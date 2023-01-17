@@ -9,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class MostrarUsersComponent implements OnInit {
 
   showUsers: any = []
-  title!:string
+  title!: string
+  nombre!: string
   constructor(private users: ApiusersService) { }
 
   ngOnInit(): void {
-    this.title=this.users.title
+    this.title = this.users.title
   }
   getShowUsers() {
+    this.nombre = 'Nombre'
     this.users.getUsers().subscribe(data => this.showUsers = data)
   }
 

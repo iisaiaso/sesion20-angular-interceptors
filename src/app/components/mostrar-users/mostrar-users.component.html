@@ -1,7 +1,11 @@
-<h1>{{title | uppercase}}</h1>
-<button 
-(click)="getShowUsers()">Mostrar</button>
-<hr>
-<ul *ngFor="let x of showUsers">
-    <li>{{x.name}}</li>
-</ul>
+<div class="w-2/5 mx-auto">
+  <h1 class="text-center font-semibold text-2xl">{{ title | uppercase }}</h1>
+  <div class=" flex justify-center my-3">
+    <button class="w-1/2 mx-auto bg-gray-300 py-2 rounded-lg font-semibold hover:bg-red-500" (click)="getShowUsers()">Mostrar</button>
+  </div>
+ <div class="h-2 bg-red-400"></div>
+    <div *ngFor="let x of showUsers" class="flex justify-center">
+      <div class="py-2 mt-2 bg-blue-400 shadow-lg w-[75%] text-center rounded-sm hover:bg-green-500">{{ x.name }}</div>
+    </div>
+ 
+</div>
